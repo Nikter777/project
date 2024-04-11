@@ -1,0 +1,18 @@
+import nltk
+from nltk.translate.bleu_score import sentence_bleu
+
+# Оригинальный текст
+reference = [''' ''']
+
+# Перевод, который необходимо оценить
+translation = ''' '''
+
+# Преобразование текстов в список токенов
+reference_tokens = [nltk.word_tokenize(ref.lower()) for ref in reference]
+translation_tokens = nltk.word_tokenize(translation.lower())
+
+# Вычисление BLEU-оценки
+bleu_score = sentence_bleu(reference_tokens, translation_tokens)
+
+# Отображение результата
+print("BLEU-оценка:", bleu_score)
